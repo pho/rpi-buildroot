@@ -6,7 +6,7 @@ TARGET="${1}"
 cp ${TARGET}/../build/linux-*/System.map ${TARGET}/System.map
 
 # copy kernel
-cp ${TARGET}/../images/zImage ${TARGET}/../images/boot/kernel.img
+mv ${TARGET}/../images/zImage ${TARGET}/../images/boot/kernel.img
 
 exit 0
 
