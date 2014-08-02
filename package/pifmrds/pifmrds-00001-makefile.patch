@@ -1,0 +1,19 @@
+--- src/Makefile.orig	2014-08-02 17:45:16.163282716 +0200
++++ src/Makefile	2014-08-02 17:44:44.740163397 +0200
+@@ -6,14 +6,12 @@ UNAME := $(shell uname -m)
+ 
+ ifeq ($(UNAME), armv6l)
+ 	CFLAGS = $(STD_CFLAGS) -march=armv6 -mtune=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp -ffast-math
+-
+-app: rds.o waveforms.o pi_fm_rds.o fm_mpx.o control_pipe.o
+-	$(CC) -o pi_fm_rds rds.o waveforms.o pi_fm_rds.o fm_mpx.o control_pipe.o -lm -lsndfile
+-
+ else
+ 	CFLAGS = $(STD_CFLAGS)
+ endif
+ 
++app: rds.o waveforms.o pi_fm_rds.o fm_mpx.o control_pipe.o
++	$(CC) -o pi_fm_rds rds.o waveforms.o pi_fm_rds.o fm_mpx.o control_pipe.o -lm -lsndfile
+ 
+ rds_wav: rds.o waveforms.o rds_wav.o fm_mpx.o
+ 	$(CC) -o rds_wav rds_wav.o rds.o waveforms.o fm_mpx.o -lm -lsndfile
