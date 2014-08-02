@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PIFMRDS
+	bool "pifmrds"
+	depends on BR2_PACKAGE_LIBSNDFILE
+	help
+	  FM-RDS transmitter using the Raspberry Pi GPIO
+
+	  https://github.com/ChristopheJacquet/PiFmRds
